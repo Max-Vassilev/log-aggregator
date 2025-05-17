@@ -11,7 +11,7 @@ class Severity(StrEnum):
     ERROR = 'ERROR'
 
 LOG_PATTERN: Final = re.compile(
-    rf"^[0-9]{{4}}-[0-9]{{2}}-[0-9]{{2}}T[0-9]{{2}}:[0-9]{{2}}:[0-9]{{2}}Z ({'|'.join(sev.value for sev in Severity)})(?: |$)"
+    f"^[0-9]{{4}}-[0-9]{{2}}-[0-9]{{2}}T[0-9]{{2}}:[0-9]{{2}}:[0-9]{{2}}Z ({'|'.join(sev.value for sev in Severity)})(?: |$)"
 )
 
 def aggregate_logs(file: Path) -> dict[str, int]:
